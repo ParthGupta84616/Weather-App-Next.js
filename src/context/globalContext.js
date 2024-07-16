@@ -1,5 +1,6 @@
 "use client";
-import React, { createContext, useContext, useState } from 'react';
+import axios from 'axios';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 // Create the global context
 export const GlobalContext = createContext();
@@ -7,17 +8,25 @@ export const GlobalUpdateContext = createContext();
 
 // Create the provider component
 export const GlobalProvider = ({ children }) => {
-    // Define the state variables
-    const [data, setData] = useState("Parth Gupta");
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const [forcast, setForcast] = useState({})
 
-    // Define any actions or functions you need
+    const response = async () => {
+        try {
+            const data = await axios.get("/api/weather")
+            console.log(data)
+            setForcast(data.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
-    // Return the provider with the state and actions
+    useEffect(() => {
+        response()
+    }, [])
+    
     return (
-        <GlobalContext.Provider value={{data}}>
-            <GlobalUpdateContext.Provider>
+        <GlobalContext.Provider value={{forcast}}>
+            <GlobalUpdateContext.Provider value={{forcast}}>
                 {children}
             </GlobalUpdateContext.Provider>
         </GlobalContext.Provider>
