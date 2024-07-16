@@ -9,7 +9,7 @@ export const GlobalUpdateContext = createContext();
 // Create the provider component
 export const GlobalProvider = ({ children }) => {
     const [forcast, setForcast] = useState({})
-
+    
     const response = async () => {
         try {
             const data = await axios.get("/api/weather")

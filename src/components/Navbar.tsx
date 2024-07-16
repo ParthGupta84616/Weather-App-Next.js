@@ -39,7 +39,7 @@ import { useGlobalContext } from "@/context/globalContext";
 
 export default function Navbar() {
   const { forcast } = useGlobalContext();
-  console.log(forcast)
+  // console.log(forcast)
   const { setTheme } = useTheme();
   const router = useRouter();
   return (

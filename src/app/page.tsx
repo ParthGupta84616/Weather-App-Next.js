@@ -8,7 +8,7 @@ export default function page() {
         <Navbar />
         <div className="flex flex-col md:flex-row sm:flex-row justify-between gap-4 mt-4">
           <div className="h-full lg:w-1/3 md:w-full  gap-2 flex flex-col justify-between">
-            <div className="w-full rounded-lg border-gray-900 border-2 ">
+            <div className="w-full">
             <Temperature />
             </div>
             <div className="w-full rounded-lg border-gray-900 border-2">
