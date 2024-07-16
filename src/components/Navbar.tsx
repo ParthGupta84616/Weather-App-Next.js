@@ -35,8 +35,11 @@ import {
   CommandSeparator,
   CommandShortcut,
 } from "@/components/ui/command";
+import { useGlobalContext } from "@/context/globalContext";
 
 export default function Navbar() {
+  const { data } = useGlobalContext();
+  console.log(data)
   const { setTheme } = useTheme();
   const router = useRouter();
   return (
