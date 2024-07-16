@@ -94,7 +94,7 @@ export default function Navbar() {
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
-      <Button onClick={() => router.push("https://github.com/ParthGupta84616")}>
+      <Button onClick={() => router.push("https://github.com/ParthGupta84616")}> 
         <Github color="blue" size={20} strokeWidth={2} />
         <span className="mx-2 font-mono text-lg">Github</span>
       </Button>
