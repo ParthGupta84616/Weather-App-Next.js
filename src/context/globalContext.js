@@ -9,12 +9,21 @@ export const GlobalUpdateContext = createContext();
 // Create the provider component
 export const GlobalProvider = ({ children }) => {
     const [forcast, setForcast] = useState({})
+    const [airPollution, setAirPollution] = useState({})
     
     const response = async () => {
         try {
             const data = await axios.get("/api/weather")
-            console.log(data)
             setForcast(data.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    const AirPollution = async()=>{
+        try {
+            const data = await axios.get("/api/AirPollution")
+            console.log(data.data)
+            setAirPollution(data.data)
         } catch (error) {
             console.log(error)
         }
@@ -22,11 +31,12 @@ export const GlobalProvider = ({ children }) => {
 
     useEffect(() => {
         response()
+        AirPollution()
     }, [])
     
     return (
-        <GlobalContext.Provider value={{forcast}}>
-            <GlobalUpdateContext.Provider value={{forcast}}>
+        <GlobalContext.Provider value={{forcast ,airPollution}}>
+            <GlobalUpdateContext.Provider value={{forcast , airPollution}}>
                 {children}
             </GlobalUpdateContext.Provider>
         </GlobalContext.Provider>

@@ -86,7 +86,7 @@ export default function Temperature() {
             </div>
             <p className="text-sm mx-2">{data.country}</p>
           </CardContent>
-          <CardFooter className="flex justify-center items-start text-9xl mt-2">
+          <CardFooter className="flex justify-center items-start text-7xl">
             {data.temperature}&deg;
           </CardFooter>
           <CardContent className="">
