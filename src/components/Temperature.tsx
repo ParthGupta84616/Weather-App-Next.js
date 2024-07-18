@@ -80,18 +80,18 @@ export default function Temperature() {
       <div>
         <Card>
           <CardContent>
-            <div className="w-full flex justify-between">
-              <p className="text-sm font-medium">{data?.day}</p>
-              <p className="text-sm font-semibold"> {new Date(data?.time* 1000).toLocaleTimeString()}</p>
+            <div className="w-full h-full flex justify-between">
+              <p className="text-sm font-medium m-2">{data?.day}</p>
+              <p className="text-sm font-semibold m-2"> {new Date(data?.time* 1000).toLocaleTimeString()}</p>
             </div>
-            <p className="text-sm">{data.country}</p>
+            <p className="text-sm mx-2">{data.country}</p>
           </CardContent>
-          <CardFooter className="flex justify-center items-start text-7xl font-bold mt-2">
-            {data.temperature} &deg;
+          <CardFooter className="flex justify-center items-start text-9xl mt-2">
+            {data.temperature}&deg;
           </CardFooter>
-          <CardContent className="-mt-4">
-            <p className="text-sm font-semibold ">{data.weatherIcon}</p>
-            <p className="text-sm font-semibold">{data.weather}</p>
+          <CardContent className="">
+            <p className="text-sm font-semibold">{data.weatherIcon}</p>
+            <p className="text-sm font-semibold ">{data.weather}</p>
             <p className="text-sm font-normal">High: {data.high} &deg;  Low: {data.low} &deg;</p>
           </CardContent>
         </Card>
@@ -102,7 +102,7 @@ export default function Temperature() {
     <div>
         <Card>
           <CardContent>
-           
+           ...Loading
           </CardContent>
         </Card>
       </div>
