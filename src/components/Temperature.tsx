@@ -72,12 +72,13 @@ export default function Temperature() {
     }, 1000);
   
     return () => clearInterval(interval);
-  }, []);
+  }, [data.time]);
 
   if (!forcast.data) return <div>loading...</div>;
   if (forcast.data) {
     return (
-      <div>
+      <div className="w-full rounded-lg  h-full p-0.5 ">
+        <div className=" shadow-sm rounded-lg  border-2">
         <Card>
           <CardContent>
             <div className="w-full h-full flex justify-between">
@@ -92,9 +93,10 @@ export default function Temperature() {
           <CardContent className="">
             <p className="text-sm font-semibold">{data.weatherIcon}</p>
             <p className="text-sm font-semibold ">{data.weather}</p>
-            <p className="text-sm font-normal">High: {data.high} &deg;  Low: {data.low} &deg;</p>
+            <p className="text-sm font-normal">High: {data.high}&deg;  Low: {data.low}&deg;</p>
           </CardContent>
         </Card>
+      </div>
       </div>
     );
   }
