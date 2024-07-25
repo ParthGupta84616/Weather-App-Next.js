@@ -1,4 +1,5 @@
 import AirPollution from "@/components/AirPollution";
+import HourlyForecat from "@/components/HourlyForecat";
 import Navbar from "@/components/Navbar";
 import Sunset from "@/components/Sunset";
 import Temperature from "@/components/Temperature";
@@ -17,7 +18,9 @@ export default function page() {
             <div className="h-1/2 w-full   bg-gray-950 p-0.5 rounded-lg">
               <AirPollution />
             </div>
-            <div className="h-1/2 w-full  border-2 border-white"></div>
+            <div className="h-1/2 w-full   bg-gray-950 p-0.5 rounded-lg">
+            <HourlyForecat />
+            </div>
           </div>
           <div className="h-full lg:w-1/3 md:w-full flex flex-col justify-between gap-2">
             <div className="h-1/2 w-full flex  gap-2">
@@ -32,7 +35,9 @@ export default function page() {
               <div className="w-1/2 h-full  border-white border-2">
               
               </div>
-              <div className="w-1/2 h-full border-white border-2"></div>
+              <div className="w-1/2 h-full border-white border-2">
+              
+              </div>
             </div>
           </div>
         </div>

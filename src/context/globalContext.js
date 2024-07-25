@@ -45,7 +45,7 @@ export const GlobalProvider = ({ children }) => {
     
     return (
         <GlobalContext.Provider value={{forcast ,airPollution , dailyForecast}}>
-            <GlobalUpdateContext.Provider value={{forcast , airPollution}}>
+            <GlobalUpdateContext.Provider value={{forcast , airPollution ,dailyForecast}}>
                 {children}
             </GlobalUpdateContext.Provider>
         </GlobalContext.Provider>
