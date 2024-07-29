@@ -19,7 +19,6 @@ export default function Sunset() {
     }))
     }
   }, [forcast])
-  console.log(data)
   return (
     <div className='h-full w-full flex-col rounded-lg shadow-sm border-2'>
       <div className="h-1/3 w-full flex items-center text-sm font-bold gap-2 ml-4">
