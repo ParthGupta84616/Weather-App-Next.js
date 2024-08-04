@@ -3,6 +3,7 @@ import HourlyForecat from "@/components/HourlyForecat";
 import Navbar from "@/components/Navbar";
 import Sunset from "@/components/Sunset";
 import Temperature from "@/components/Temperature";
+import UV from "@/components/UV";
 import Wind from "@/components/Wind";
 import React from "react";
 export default function page() {
@@ -31,11 +32,11 @@ export default function page() {
                 <Wind />
               </div>
             </div>
-            <div className="h-1/2 w-full border-2 flex gap-2">
-              <div className="w-1/2 h-full  border-white border-2">
-              
+            <div className="h-1/2 w-full flex gap-2">
+              <div className="w-1/2 h-full  bg-gray-950 p-0.5 rounded-lg">
+              <UV />
               </div>
-              <div className="w-1/2 h-full border-white border-2">
+              <div className="w-1/2 h-full  bg-gray-950 p-0.5 rounded-lg">
               
               </div>
             </div>

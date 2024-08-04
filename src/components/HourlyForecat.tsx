@@ -39,14 +39,19 @@ export default function HourlyForecat() {
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-1">
                   <Card>
-                    <CardContent className="flex aspect-square items-center justify-center p-6">
-                      <span className="text-xs font-semibold">
+                    <CardContent className="flex aspect-square items-center justify-center p-2">
+                      <span className="text-sm font-semibold">
                         {timestampToDate(dailyForecast?.data?.list[index].dt)}  
+                        <div className="flex item-center justify-center">
                         <img
                           src={`http://openweathermap.org/img/wn/${dailyForecast?.data?.list[index]?.weather[0]?.icon}.png`}
                           alt="Weather icon"
+                          className=""
                           />
+                        </div>
+                          <div className="flex item-center justify-center">
                           {Math.round(dailyForecast?.data?.list[index].main.temp - 273.15)}°C
+                          </div>
                       </span>
                     </CardContent>
                   </Card>

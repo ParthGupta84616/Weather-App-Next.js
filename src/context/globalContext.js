@@ -11,6 +11,7 @@ export const GlobalProvider = ({ children }) => {
     const [forcast, setForcast] = useState({})
     const [airPollution, setAirPollution] = useState({})
     const [dailyForecast, setDailyForecast] = useState({})
+    const [UV, setUV] = useState({})
     
     const response = async () => {
         try {
@@ -36,16 +37,25 @@ export const GlobalProvider = ({ children }) => {
             console.log(error)
         }
     }
+    const CurrentUV = async()=>{
+        try {
+            const data = await axios.get("/api/UV")
+            setUV(data.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
     useEffect(() => {
         response()
         ThreeHourForecast()
         AirPollution()
+        CurrentUV()
     }, [])
     
     return (
-        <GlobalContext.Provider value={{forcast ,airPollution , dailyForecast}}>
-            <GlobalUpdateContext.Provider value={{forcast , airPollution ,dailyForecast}}>
+        <GlobalContext.Provider value={{forcast ,airPollution , dailyForecast , UV}}>
+            <GlobalUpdateContext.Provider value={{forcast , airPollution ,dailyForecast , UV}}>
                 {children}
             </GlobalUpdateContext.Provider>
         </GlobalContext.Provider>
